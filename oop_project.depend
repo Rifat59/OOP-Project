@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1527674472 source:g:\oop_project\new.cpp
+
+1529848217 source:g:\oop_project\main.cpp
+	<iostream>
+	"submain.h"
+
+1529847377 g:\oop_project\kids.h
+	<bits/stdc++.h>
+
+1527675205 g:\oop_project\main.cpp
+	<iostream>
+	"kids.h"
+
+1529747855 g:\oop_project\gents.h
+	<iostream>
+
+1529747878 g:\oop_project\ladies.h
+	<iostream>
+
+1529848088 g:\oop_project\submain.h
+	<bits/stdc++.h>
+	<iostream>
+	"kids.h"
+	"gents.h"
+	"ladies.h"
+	"lol.h"
+
+1529843726 source:g:\oop_project\kids.cpp
+
+1529847978 source:g:\oop_project\lol.cpp
+	<bits/stdc++.h>
+
+1529848088 g:\oop_project\lol.h
+

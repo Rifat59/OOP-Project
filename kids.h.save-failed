@@ -1,0 +1,393 @@
+#include<iostream>
+
+using namespace std;
+
+void user_kids();
+
+FILE * fp;
+
+class toys
+{
+public:
+
+    int car, cycle, gun, scooter;
+    toys(){}
+    toys(int ca, int cy, int g, int scc)
+    {
+        car = ca;
+        cycle = cy;
+        gun = g;
+        scooter = scc;
+    }
+
+    void user_kids();
+    void kids_toys_menu();
+};
+
+void toys::kids_toys_menu()
+{
+    cout<<"         ______________Here are the lists of the toys_____________\n\n";
+    cout<<"         1. Cars : "<<car<<endl<<"           2. Cycle : "<<cycle<<endl<<"            3. Gun : "<<gun<<endl<<"            4. scooter : "<<scooter<<endl<<endl;
+    user_kids();
+}
+
+void toys::user_kids()
+{
+    bool check = false;
+    string str,st;
+    while(1)
+    {
+        cout<<"\n\n   _____________Select your items : ";
+        cin>>str;
+        if(str == "1")
+        {
+            while(1)
+            {
+                cout<<"\n   _________Enter the number of car you want to buy?? :";
+                int n;
+                cin>>n;
+                if(n < 0){
+                    cout<<"\nInvalid number. Please put a valid one...!!!\n";
+                }
+                else{
+                    if(n > car)
+                        cout<<"\nSorry,invalid number. Please try again..!!\n";
+                    else {
+                        car -= n;
+                        cout<<"\nThank you for buying cars from our shop...!!!\n";
+                    }
+                }
+                
+                cout<<"\nDo you want to buy again?? (yes / no): ";
+                cin>>st;
+                if(st == "no") {
+                    check = true;
+                    break;
+                }
+            }
+            //break;
+        }
+        else if(str == "2")
+        {
+            while(1)
+            {
+                cout<<"\n_________Enter the number of cycle you want to buy?? :";
+                int n;
+                cin>>n;
+                if(n < 0){
+                    cout<<"\nInvalid number. Please put a valid one...!!!\n";
+                }
+                else{
+                    if(n > cycle)
+                    cout<<"\nSorry,invalid number. Please try again..!!\n";
+                    else {
+                        cycle -= n;
+                        cout<<"\nThank you for buying cycles from our shop...!!!\n";
+                    }
+                }
+                
+                cout<<"\nDo you want to buy again?? (yes / no): ";
+                cin>>st;
+                if(st == "no") {
+                    check = true;
+                    break;
+                }
+            }
+            //break;
+        }
+        else if(str == "3")
+        {
+            while(1)
+            {
+                cout<<"\n_________Enter the number of gun you want to buy?? :";
+                int n;
+                cin>>n;
+                if(n < 0){
+                    cout<<"\nInvalid number. Please put a valid one...!!!\n";
+                }
+                else{
+                   if(n > gun)
+                        cout<<"\nSorry,invalid number. Please try again..!!\n";
+                    else {
+                        gun -= n;
+                        cout<<"\nThank you for buying guns from our shop...!!!\n";
+                    } 
+                }
+                
+                cout<<"\nDo you want to buy again?? (yes / no): ";
+                cin>>st;
+                if(st == "no") {
+                    check = true;
+                    break;
+                }
+            }
+            //break;
+        }
+        else if(str == "4")
+        {
+            while(1)
+            {
+                cout<<"\n_________Enter the number of scooter you want to buy?? :";
+                int n;
+                cin>>n;
+                if(n < 0){
+                    cout<<"\nInvalid number. Please put a valid one...!!!\n";
+                }
+                else{
+                   if(n > scooter)
+                        cout<<"\nSorry,invalid number. Please try again..!!\n";
+                    else {
+                        scooter -= n;
+                        cout<<"\nThank you for buying scooters from our shop...!!!\n";
+                    } 
+                }
+                
+                cout<<"\nDo you want to buy again?? (yes / no): ";
+                cin>>st;
+                if(st == "no") {
+                    check = true;
+                    break;
+                }
+            }
+            //break;
+        }
+        else {
+            cout<<"\nInvalid keyword. Please try again...!!!\n\\n";
+        }
+        if(check) {
+            fp = fopen("kids_toys.txt", "w");
+            fprintf(fp, "%d\n%d\n%d\n%d\n", car, cycle, gun, scooter);
+            fclose(fp);
+            break;
+        }
+    }
+
+}
+
+class dresses
+{
+public:
+    int dress;
+    dresses(){}
+    dresses(int dre)
+    {
+        dress = dre;
+    }
+
+    void user_kids_dress();
+};
+
+void dresses :: user_kids_dress()
+{
+    while(1)
+            {
+                cout<<"\n\nDresses : "<<dress<<endl;
+                cout<<"\n_________Enter the number of dresses you want to buy?? :";
+                int n;
+                cin>>n;
+                if(n < 0){
+                    cout<<"\nInvalid number. Please put a valid one...!!!\n";
+                }
+                else{
+                    if(n > dress)
+                        cout<<"\nSorry,invalid number. Please try again..!!\n";
+                    else {
+                        dress -= n;
+                        cout<<"\nThank you for buying dresses from our shop...!!!\n";
+                    }
+                }
+                string st;
+                cout<<"\nDo you want to buy again?? (yes / no): ";
+                cin>>st;
+                if(st == "no") {
+                    break;
+                }
+                else{
+                    fp = fopen("kids_dress.txt", "w");
+                    fprintf(fp, "%d\n", dress);
+                    fclose(fp);
+                }
+            }
+}
+
+class baby_food
+{
+public:
+
+    int noodles, horlicks, complan;
+    baby_food(){}
+    baby_food(int nood, int hor, int com)
+    {
+        noodles = nood;
+        horlicks = hor;
+        complan = com;
+    }
+
+    void user_baby_foods();
+    void baby_foods_menu();
+};
+
+void baby_food::baby_foods_menu()
+{
+    cout<<"\n______________Here are the lists of the foods_____________\n\n";
+    cout<<"         1. Noodles : "<<noodles<<endl<<"           2. Horlicks : "<<horlicks<<endl<<"            3. Complan : "<<complan<<endl<<endl;
+    user_baby_foods();
+}
+
+void baby_food::user_baby_foods()
+{
+    bool check = false;
+    string str,st;
+    while(1)
+    {
+        cout<<"\n\n_____________Select your items : ";
+        cin>>str;
+        if(str == "1")
+        {
+            while(1)
+            {
+                cout<<"\n_________Enter the number of noodles you want to buy?? :";
+                int n;
+                cin>>n;
+                if(n < 0){
+                    cout<<"\nInvalid number. Please put a valid one...!!!\n";
+                }
+                else{
+                    if(n > noodles)
+                        cout<<"\nSorry,invalid number. Please try again..!!\n";
+                    else {
+                        noodles -= n;
+                        cout<<"\nThank you for buying noodles from our shop...!!!\n";
+                    }
+                }
+                
+                cout<<"\nDo you want to buy again?? (yes / no): ";
+                cin>>st;
+                if(st == "no") {
+                    check = true;
+                    break;
+                }
+            }
+            //break;
+        }
+        else if(str == "2")
+        {
+            while(1)
+            {
+                cout<<"\n_________Enter the number of horlicks you want to buy?? :";
+                int n;
+                cin>>n;
+                if(n < 0){
+                    cout<<"\nInvalid number. Please put a valid one...!!\n";
+                }
+                else{
+                   if(n > horlicks)
+                        cout<<"\nSorry,invalid number. Please try again..!!\n";
+                    else {
+                        horlicks -= n;
+                        cout<<"\nThank you for buying horlicks from our shop...!!!\n";
+                    } 
+                }
+                
+                cout<<"\nDo you want to buy again?? (yes / no): ";
+                cin>>st;
+                if(st == "no") {
+                    check = true;
+                    break;
+                }
+            }
+            //break;
+        }
+        else if(str == "3")
+        {
+            while(1)
+            {
+                cout<<"\n_________Enter the number of complan you want to buy?? :";
+                int n;
+                cin>>n;
+                if(n < 0){
+                    cout<<"\nInvalid number. Please put a valid one...!!!\n";
+                }
+                else{
+                    if(n > complan)
+                        cout<<"\nSorry,invalid number. Please try again..!!\n";
+                    else {
+                        complan -= n;
+                        cout<<"\nThank you for buying complan from our shop...!!!\n";
+                    }
+                }
+                
+                cout<<"\nDo you want to buy again?? (yes / no): ";
+                cin>>st;
+                if(st == "no") {
+                    check = true;
+                    break;
+                }
+            }
+            //break;
+        }
+        else {
+            cout<<"\nInvalid keyword. Please try again...!!!\n\\n";
+        }
+        if(check) {
+            fp = fopen("kids_foods.txt", "w");
+            fprintf(fp, "%d\n%d\n%d\n", noodles, horlicks, complan);
+            fclose(fp);
+            break;
+        }
+    }
+
+}
+
+class kids 
+{
+public:
+    void kids_menu()
+    {
+        string input;
+        while(1)
+        {
+            cout<<"\n       ________________Here are the menus for the kids______________\n\n";
+            cout<<"           1.Toys\n            2.Dress\n           3.Baby Foods\n          0.Main Menu\n";
+            cout<<"\n           ___________Enter your choice for kide item: ";
+            cin>>input;
+            if(input == "0")
+            {
+                kids_menu();
+                break;
+            }
+            else if(input == "1")
+            {
+                int car, cycle, gun, scooter;
+                fp = fopen("kids_toys.txt", "r");
+                fscanf(fp, "%d%d%d%d", &car, &cycle, &gun, &scooter);
+                toys toy(car, cycle, gun, scooter);
+                toy.kids_toys_menu();
+                fclose(fp);
+                break;
+            }
+            else if(input == "2")
+            {
+                int dress;
+                fp = fopen("kids_dress.txt", "r");
+                fscanf(fp, "%d", &dress);
+                dresses dres(dress);
+                dres.user_kids_dress();
+                fclose(fp);
+                break;
+            }
+            else if(input == "3")
+            {
+                int noodles, horlicks, complan;
+                fp = fopen("kids_foods.txt", "r");
+                fscanf(fp, "%d%d%d", &noodles,&horlicks,&complan);
+                baby_food foods(noodles, horlicks, complan);
+                foods.baby_foods_menu();
+                fclose(fp);
+                break;
+            }
+            else
+                cout<<"\n\nInvalid input. Please try again!!!!\n\n";
+        }
+    }
+};
